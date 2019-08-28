@@ -1,0 +1,175 @@
+//libreria que permite añadir fuentes responsive
+@import "../../node_modules/rfs/scss";
+
+.title{
+  text-align: center;
+  @include font-size(1.25em,true);
+  font-family: "Cinzel",'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: relative;
+
+  @media (max-width: 576px) {
+    display: grid;
+
+  }
+
+  .caption{
+    width: auto;
+    margin: auto;
+  }
+
+  .option{
+    top:0;
+    margin-left: 2px;
+    position: absolute;
+    left:0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+
+    @media (max-width: 576px) {
+      align-content: center;
+      justify-content: center;
+    }
+
+    .optionItem{
+      margin: auto 2px;
+    }
+
+    @media (max-width: 576px) {
+      position: initial;
+      grid-row-start: 2 span;
+      order:2;
+
+    }
+  }
+}
+
+.table{
+  @include font-size(1.05em,true);
+  font-family: "Quicksand",'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+  &.table-vertical{
+    tbody{
+      tr{
+        td:first-child{
+          @include font-size(1.1em,true);
+          width: 30%;
+          background-color: #cce5ff;
+          color: #004085;
+          box-sizing: border-box;
+          border-top: 2px solid #adc5df;
+          border-left: 2px solid #adc5df;
+          border-right: 0;
+        }
+
+        td:nth-child(2){
+          @include font-size(.9em,true);
+          width: 70%;
+          .contFile{
+            width: 95%;
+            margin: 0 auto 0 0;
+            position: relative;
+            border: 1px  #000 solid;
+            box-sizing: border-box;
+            padding: .5em;
+            border-radius: 5px;
+
+            input{
+              position: absolute;
+              top: 0;
+              left:0;
+              height: 100%;
+              opacity: 0;
+              display: block;
+              width: 100%;
+            }
+          }
+
+          td{
+            &:hover{
+              background-color: rgba(rgb(196, 196, 196),0.75);
+            }
+          }
+
+          .messageTag{
+            display: block;
+            margin: 0;
+          }
+        }
+
+        &:hover{
+          td{
+            background-color: rgba(rgb(209, 209, 209), 0.60)
+          }
+        }
+
+        .imgCont{
+          min-width:200px;
+          max-width:200px;
+          min-height:200px;
+          max-height:200px;
+          overflow:hidden;
+          margin:auto;
+
+          img{
+              display:block;
+              width:100%;
+              object-fit:cover;
+          }
+        }
+      }
+
+      tr:last-child{
+        td:first-child{
+          border-bottom: 2px solid #adc5df;
+        }
+      }
+    }
+
+    &.sm{
+      tbody{
+        tr{
+          td{
+            @include font-size(.75em,true);
+            padding: .2em;
+            font-weight: 0;
+            margin:0;
+          }
+        }
+      }
+    }
+  }
+
+  &.table-horizontal{
+    @include font-size(.9em,true);
+
+    thead{
+      @include font-size(1.05em,true);
+      text-align: center;
+      color: #004085;
+      box-sizing: border-box;
+
+      tr{
+        th{
+          border: 2px solid #adc5df;
+          background-color: #cce5ff;
+        }
+      }
+    }
+
+    &.sm{
+      tbody{
+        tr{
+          td{
+            @include font-size(.7em,true);
+            padding: .5em;
+            font-weight: 0;
+            margin: 0;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+}
