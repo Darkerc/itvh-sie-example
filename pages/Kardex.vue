@@ -352,6 +352,7 @@ import IcoPrint from "../components/IcoFont/IcoPrint";
 
 export default {
     layout: "application",
+    transition: "default",
     head() {
         //Atributos de la cabecera (head) que le pertenecen a esta pagina
         return {

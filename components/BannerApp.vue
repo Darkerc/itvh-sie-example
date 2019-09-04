@@ -8,18 +8,18 @@
           </div>
           ITVH - <b-badge variant="success" class="d-flex align-items-center">SIE</b-badge>
         </a>
-        <ul class="navContent h-100 scroll-info degraded">
+        <ul class="navContent h-100 scroll-success degraded">
           <li class="navItem user-profile">
             <div class="user-thumb-content">
               <img src="~/assets/17301148.jpg" alt="Alumno-itvh" class="user-thumb">
             </div>
-            <nuxt-link :to="{ name: 'welcome'}" class="navLink">
+            <nuxt-link :to="{ name: 'Datos-generales'}" class="navLink">
               Eder Reyes Castellanos
             </nuxt-link>
           </li>
           <li class="navItem">
             <span class="navActive"></span>
-            <nuxt-link :to="{ name: 'welcome'}" class="itemLink">
+            <nuxt-link :to="{ name: 'Datos-generales'}" class="itemLink">
               Datos Generales
             </nuxt-link>
           </li>

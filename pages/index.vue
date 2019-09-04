@@ -1,11 +1,5 @@
 <template>
   <div>
-
-      <!-- Video background que se muestra -->
-      <video id="videoBG" autoplay muted loop>
-        <source src="../assets/Index/BackFile.mp4" type="video/mp4">
-      </video>
-
       <!--
         Pagina de inicio donde se realiza el login del usuario en esta se importan 3 componentes
         Titular: Titulo que muestra el Texto "Intituto tecnologico de villahermosa"
@@ -28,7 +22,13 @@
 
         </b-row>
 
+        <!-- Video background que se muestra -->
+        <img id="videoBG" src="/BackFile4.gif">
+
+        <div id="backColor"></div>
+
       </b-container>
+
 
   </div>
 </template>
@@ -64,18 +64,38 @@ export default {
     min-height: 100vh;
     max-height: 100vh;
     user-select: none;
-    background-color: rgba(200, 255, 208, 0.75) !important;
     overflow: hidden;
+    position:relative;
+    z-index: 1;
+
+    #videoBG{
+      position: absolute;
+      top:0;
+      left:0;
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      z-index: -2;
+    }
+
+    #backColor{
+      background-color: rgba(200, 255, 208, 0.75) !important;
+      z-index: -1;
+      min-width: 100vw;
+      max-width: 100vw;
+      min-height: 100vh;
+      max-height: 100vh;
+      position: absolute;
+      top:0;
+      left:0;
+      width: 100%;
+      height: 100%;
+    }
   }
 
-  #videoBG{
-    position: fixed;
-    top:0;
-    left:0;
-    z-index: -1;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  .bg-none{
+    background: none;
   }
 
   @media (max-width: 768px) {

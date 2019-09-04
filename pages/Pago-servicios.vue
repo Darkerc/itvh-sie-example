@@ -244,6 +244,7 @@ import tablevertical from "../components/table-vertical.vue";
 
   export default {
     layout:"application",
+    transition: "default",
     head(){
       return{
         title:"Pago de servicios",

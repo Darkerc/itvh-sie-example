@@ -102,6 +102,7 @@ import IcoEye from "../components/IcoFont/IcoEye";
 
 export default {
   layout:"application",
+  transition: "default",
   head () {
     //Atributos de la cabecera (head) que le pertenecen a esta pagina
     return {

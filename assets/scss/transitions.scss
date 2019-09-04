@@ -1,0 +1,19 @@
+.default-enter {
+    transform-origin: 50% 50%;
+    transform: scale(1.01);
+}
+.default-enter-active {
+    transition: all .30s ease-out;
+}
+.default-enter-to {
+    transition: all ease-in  250ms;
+}
+.default-leave {
+    transition: all ease-out 250ms;
+}
+.default-leave-active {
+    transition: all .30s ease-out;
+}
+.default-leave-to {
+    transition: all ease-out 250ms;
+}

@@ -2,12 +2,12 @@
   <div>
     <div>
       <b-form id="iniciarSesion" name="iniciarSesion" @submit.prevent="validarUsuario" class="p-4">
-        <label for="" class="d-block lead text-center formItem">Introduzca sus datos de acceso</label>
+        <div class="d-block lead text-center formItem">Introduzca sus datos de acceso</div>
         <b-form-group
           id="numControl"
           label="Introduzca su numero de control"
           label-for="NumeroControl"
-          class="formItem"
+          class="formItem inputSelected"
         >
           <b-form-input
             id="NumeroControl"
@@ -22,7 +22,7 @@
           id="contraseña"
           label="Clave de acceso"
           label-for="Contraseña"
-          class="formItem"
+          class="formItem inputSelected"
         >
           <b-form-input
             id="Contraseña"
@@ -82,9 +82,8 @@ export default {
     },
     validarUsuario(){
       if($("#iniciarSesion").valid()){
-        this.$store.commit('changeUserLogin')
         this.$router.push({
-          name:"welcome"
+          name:"Datos-generales"
         })
       }
     }
@@ -100,16 +99,32 @@ export default {
   @import "../../node_modules/rfs/scss";
 
   #iniciarSesion{
-    background-color: rgba(#5BC0DE, .65);
+    background-color: rgba(#87ff83, .65);
     box-sizing: border-box;
     border-radius:20px;
     overflow: hidden;
   }
 
   .formItem{
-    @include font-size(1.5rem,true);
+    @include font-size(1.75rem,true);
     font-family: "Titillium web",sans-serif;
-    font-weight: 500;
+    font-weight: 800;
+    color:white;
+    text-shadow: -2px -2px 3px rgb(125, 125, 0),
+                  2px -2px 3px rgb(125, 125, 10),
+                  -2px 2px 3px rgb(125, 125, 10),
+                  2px 2px 3px rgb(125, 125, 10);
+  }
+
+  .inputSelected{
+    @include font-size(1.5rem,true);
+    font-family: Inconsolata,"sans-serif";
+    color:white;
+    font-weight: 800;
+    text-shadow: -2px -2px 3px rgb(125, 125, 0),
+                  2px -2px 3px rgb(125, 125, 10),
+                  -2px 2px 3px rgb(125, 125, 10),
+                  2px 2px 3px rgb(125, 125, 10);
   }
 </style>
 

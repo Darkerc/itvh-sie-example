@@ -11,17 +11,17 @@
         <b-navbar-toggle target="nav-collapse" id="toggleButton" class="align-self-start navbar-dark"></b-navbar-toggle>
 
         <div class="collapse navbar-collapse p-2 d-flex flex-column menuMobile" id="navbarSupportedContent">
-          <ul class="navbar-nav align-self-stretch w-100 h-100" id="itemsNavContent">
+          <ul class="navbar-nav align-self-stretch w-100 h-100 scroll-success degraded" id="itemsNavContent">
             <li class="card-user">
               <div>
                 <img src="~/assets/17301148.jpg" alt="Alumno-itvh" class="user-thumb">
               </div>
-              <nuxt-link :to="{ name: 'welcome'}" class="user-name">
+              <nuxt-link :to="{ name: 'Datos-generales'}" class="user-name">
                 Eder Reyes Castellanos
               </nuxt-link>
             </li>
             <li class="nav-item hoverEfect">
-              <nuxt-link :to="{ name: 'welcome'}" class="nav-link">
+              <nuxt-link :to="{ name: 'Datos-generales'}" class="nav-link">
                 Datos Generales
               </nuxt-link>
             </li>
@@ -158,29 +158,6 @@ export default {
     margin-top:3.5rem !important;
     box-sizing: border-box;
     box-shadow: 10px 10px 20px inset rgb(24, 82, 39);
-
-
-    //=====Estilos del scroll dentro del navbar
-    ::-webkit-scrollbar {
-          background-color: white;
-          width: 5px;
-      }
-
-      ::-webkit-scrollbar-thumb {
-          border-radius: 10px;
-          background: linear-gradient(#1fbd46,#14ad66,#24b430);
-          margin-right: 2px;
-          margin-left: 2px;
-      }
-
-      ::-webkit-scrollbar-track {
-          background-color: #93ff9c;
-          border: 2px solid #93ff9c;
-
-          &:hover {
-              background-color: rgb(140, 248, 132);
-          }
-      }
 
     #itemsNavContent{
       padding: 1em;

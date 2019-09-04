@@ -1,6 +1,5 @@
 <template>
   <div>
-
       <!--
         Plantilla principal de la aplicacion cuando se h iniciado session en el SIE
         Contine tres componentes principales
@@ -16,11 +15,13 @@
           <BannerApp id="BannerApp" class="h-100 pr-0" />
         </b-col>
 
-        <b-col sm="12" lg="9" class="p-0 d-flex colum">
+        <b-col id="PageContainer" sm="12" lg="9" class="p-0 d-flex colum">
           <nuxt id="nuxt" class="scroll-info"/>
+          <LoadingPage id="LoadingPage"/>
         </b-col>
-
       </b-row>
+
+
 
   </div>
 </template>
@@ -28,12 +29,14 @@
 <script>
 import NavBar from "~/components/NavBar.vue"
 import BannerApp from "~/components/BannerApp.vue"
+import LoadingPage from "~/components/loading-page.vue"
 
 export default {
-  middleware:"userAuth",
+  transition: "default",
   components: {
     NavBar,
-    BannerApp
+    BannerApp,
+    LoadingPage
   }
 }
 </script>
@@ -65,22 +68,24 @@ export default {
       background-color: rgb(39, 124, 59) !important;
   }
 
-  #nuxt{
-    box-sizing: border-box;
-    height: 95%;
-    width: 95%;
-    margin: auto !important;
-    box-sizing: border-box;
-    display: block;
-    border-radius: 1%;
-    padding: 1.5em;
-    overflow: auto;
-    user-select: text;
-    background-color: white;
+  #PageContainer{
+    #nuxt{
+      box-sizing: border-box;
+      height: 95%;
+      width: 95%;
+      margin: auto !important;
+      box-sizing: border-box;
+      display: block;
+      border-radius: 1%;
+      padding: 1.5em;
+      overflow: auto;
+      user-select: text;
+      background-color: white;
 
-    @media (max-width: 992px) {
-      padding: 3em 1em 1em 1em;
-      border-radius: 0  0 1% 1%;
+      @media (max-width: 992px) {
+        padding: 3em 1em 1em 1em;
+        border-radius: 0  0 1% 1%;
+      }
     }
   }
 

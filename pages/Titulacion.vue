@@ -10,6 +10,7 @@
 <script>
   export default {
     layout:"application",
+    transition: "default",
     head(){
       return{
         title:"Titulacion",

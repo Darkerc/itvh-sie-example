@@ -24,7 +24,7 @@ export default {
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: '#fff' },
+  loading: '~/components/loading-page.vue',
   /*
   ** Global CSS
   */
@@ -64,10 +64,16 @@ export default {
     ]
   ],
 
+  serverMiddleware: [
+    // API middleware
+    '~/api/index.js'
+  ],
+
   workbox: {
     importScripts: [
       '/custom-sw.js'
-    ]
+    ],
+    offlineStrategy:"CacheFirst"
   },
 
   manifest: {
@@ -85,11 +91,13 @@ export default {
       'assets/scss/index.scss'
     ]
   },
+
   /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
+    proxyHeaders: false
   },
   /*
   ** Build configuration

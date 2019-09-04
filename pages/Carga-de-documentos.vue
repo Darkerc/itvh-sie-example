@@ -8,26 +8,26 @@
           <tr>
             <td>Clave CURP</td>
             <td>
-              RECE990301HTCYSD03
+              {{ alumno.CURP }}
             </td>
           </tr>
           <tr>
             <td>Nombre</td>
             <td>
-              EDER REYES CASTELLANOS
+              {{ alumno.Nombre }}
             </td>
           </tr>
           <tr>
             <td>Carrera</td>
             <td>
-              (11) ING.SIST.COMP.
+              {{ alumno.Carrera }}
             </td>
           </tr>
           <tr>
             <td>Foto</td>
             <td>
               <div class="imgCont">
-                <img src="~/assets/icoitvh.gif" >
+                <img :src="alumno.Foto" >
               </div>
             </td>
           </tr>
@@ -126,12 +126,16 @@
         </tbody>
       </table>
    </div>
+   <div>
+     {{ alumno }}
+   </div>
   </div>
 </template>
 
 <script>
 export default {
   layout:"application",
+  transition: "default",
   head () {
     //Atributos de la cabecera (head) que le pertenecen a esta pagina
     return {
@@ -208,6 +212,12 @@ export default {
         console.log(this.model)
       }
     }
+  },
+  async asyncData({ $axios , error}) {
+    const alumno = await $axios.$post('/api/alum/data/17301148').catch((err)=>{
+      error({ statusCode: 500, message: 'Error al conectar con el servidor en Carga de documentos' })
+    })
+    return { alumno }
   }
 }
 </script>

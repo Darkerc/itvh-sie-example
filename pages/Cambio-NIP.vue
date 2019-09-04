@@ -29,6 +29,7 @@
 <script>
   export default {
     layout:"application",
+    transition: "default",
     head(){
       return{
         title:"Cambio de nip",
